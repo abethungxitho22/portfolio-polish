@@ -1,70 +1,92 @@
-import { ArrowDown, Github, Mail, Phone } from 'lucide-react';
+import { ArrowDown, Github, Mail, Phone, User } from 'lucide-react';
 
 export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero px-4 py-24 md:py-20"
     >
+      {/* ambient blobs */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 right-20 w-72 h-72 rounded-full blur-3xl bg-primary/30" />
         <div className="absolute bottom-20 left-10 w-96 h-96 rounded-full blur-3xl bg-secondary/25" />
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center animate-fade-up">
-        <div className="mb-6 inline-flex items-center gap-2 text-xs font-semibold px-4 py-1.5 rounded-full tracking-wide uppercase bg-primary-soft text-primary-deep">
-          <span className="w-1.5 h-1.5 rounded-full bg-primary-deep animate-pulse" />
-          Available for opportunities
+      {/* hero card — Sanya Harper inspired */}
+      <div className="relative z-10 w-full max-w-5xl mx-auto animate-fade-up">
+        <div className="bg-primary rounded-[2rem] md:rounded-[2.5rem] p-6 sm:p-10 md:p-14 shadow-rose">
+          <div className="grid md:grid-cols-[1.4fr_1fr] gap-8 md:gap-10 items-center">
+            {/* left: text */}
+            <div>
+              <nav className="flex items-center gap-6 text-[10px] sm:text-xs tracking-[0.2em] uppercase text-foreground/70 font-semibold mb-8">
+                <a href="#about" className="hover:text-foreground transition-colors">About</a>
+                <a href="#projects" className="hover:text-foreground transition-colors">Projects</a>
+                <a href="#contact" className="hover:text-foreground transition-colors">Contact</a>
+              </nav>
+
+              <h1 className="font-display font-bold text-foreground leading-[0.95] text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-3">
+                Abethu
+                <br />
+                <span className="italic">Ngxitho</span>
+              </h1>
+
+              <p className="text-[11px] sm:text-xs tracking-[0.25em] uppercase text-foreground/80 font-semibold mb-6">
+                Software Developer
+              </p>
+
+              <a
+                href="#projects"
+                className="inline-flex items-center gap-2 px-5 py-2 rounded-full border-[1.5px] border-foreground/40 text-foreground text-xs font-semibold uppercase tracking-wider hover:bg-foreground hover:text-primary transition-all"
+              >
+                See my work
+              </a>
+            </div>
+
+            {/* right: photo card placeholder */}
+            <div className="relative">
+              <div className="relative aspect-[3/4] rounded-3xl overflow-hidden bg-gradient-to-br from-primary-soft via-primary-softer to-secondary-soft border border-background/40 shadow-lg">
+                {/* soft inner gradient */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 via-transparent to-secondary/30" />
+                {/* monogram placeholder — replace src with real image when ready */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-foreground/70">
+                  <div className="w-20 h-20 rounded-full bg-background/60 backdrop-blur flex items-center justify-center mb-3 shadow-soft">
+                    <User size={32} className="text-primary-deep" strokeWidth={1.5} />
+                  </div>
+                  <p className="font-display text-3xl font-bold">AN</p>
+                  <p className="text-[10px] uppercase tracking-[0.2em] mt-1 text-foreground/50">photo coming soon</p>
+                </div>
+              </div>
+
+              {/* status pill */}
+              <div className="absolute -bottom-4 -left-4 sm:-left-6 bg-background rounded-2xl px-4 py-2.5 shadow-rose flex items-center gap-2 border border-border">
+                <span className="w-2 h-2 rounded-full bg-primary-deep animate-pulse" />
+                <span className="text-xs font-semibold text-foreground">Open to work</span>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <h1 className="font-display text-6xl md:text-8xl font-bold text-foreground mb-4 leading-[0.95]">
-          Abethu{' '}
-          <span className="text-primary-deep italic">Ngxitho</span>
-        </h1>
-
-        <p className="text-lg md:text-xl text-muted-foreground font-medium mb-6 tracking-wide">
-          Intern ICT Developer &nbsp;·&nbsp; Cape Town, South Africa
-        </p>
-
-        <p className="max-w-2xl mx-auto text-muted-foreground text-base md:text-lg leading-relaxed mb-10">
-          Motivated software developer passionate about building innovative,
-          data-driven, and automated solutions that make a real-world impact.
-        </p>
-
-        <div className="flex flex-wrap items-center justify-center gap-4 mb-14">
-          <a
-            href="#contact"
-            className="px-8 py-3 rounded-full font-semibold text-sm transition-all duration-200 bg-primary-deep text-primary-foreground shadow-rose hover:opacity-90 hover:-translate-y-0.5"
-          >
-            Get in touch
+        {/* socials below card */}
+        <div className="flex items-center justify-center gap-6 mt-10">
+          <a href="mailto:abethungxitho82@gmail.com" aria-label="Email" className="text-muted-foreground hover:text-primary-deep transition-colors">
+            <Mail size={18} />
           </a>
-          <a
-            href="#projects"
-            className="px-8 py-3 rounded-full font-semibold text-sm transition-all duration-200 border-[1.5px] border-secondary text-secondary-deep hover:bg-secondary-soft"
-          >
-            View my work
+          <a href="tel:+27717460314" aria-label="Phone" className="text-muted-foreground hover:text-primary-deep transition-colors">
+            <Phone size={18} />
           </a>
-        </div>
-
-        <div className="flex items-center justify-center gap-6">
-          <a href="mailto:abethungxitho82@gmail.com" className="text-muted-foreground transition-colors hover:text-primary-deep">
-            <Mail size={20} />
-          </a>
-          <a href="tel:+27717460314" className="text-muted-foreground transition-colors hover:text-primary-deep">
-            <Phone size={20} />
-          </a>
-          <a href="https://github.com" target="_blank" rel="noreferrer" className="text-muted-foreground transition-colors hover:text-primary-deep">
-            <Github size={20} />
+          <a href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub" className="text-muted-foreground hover:text-primary-deep transition-colors">
+            <Github size={18} />
           </a>
         </div>
       </div>
 
+      {/* gentle scroll cue (the global floating one handles section-jumping) */}
       <a
         href="#about"
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-primary-deep"
-        aria-label="Scroll down"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce text-primary-deep opacity-70"
+        aria-label="Scroll to about"
       >
-        <ArrowDown size={22} />
+        <ArrowDown size={20} />
       </a>
     </section>
   );
