@@ -6,6 +6,7 @@ import Experience from '@/components/portfolio/Experience';
 import Skills from '@/components/portfolio/Skills';
 import Education from '@/components/portfolio/Education';
 import Contact from '@/components/portfolio/Contact';
+import ScrollDownButton from '@/components/portfolio/ScrollDownButton';
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
       <Skills />
       <Education />
       <Contact />
+      <ScrollDownButton />
     </main>
   );
 };
