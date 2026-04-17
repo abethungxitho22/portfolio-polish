@@ -54,7 +54,7 @@ export default function Contact() {
               <div>
                 <p className="text-xs text-muted-foreground font-medium uppercase tracking-wide mb-0.5">Location</p>
                 <p className="text-foreground font-semibold text-sm">
-                  54 - 7th Avenue, Kensington, Cape Town 7925
+                  Cape Town
                 </p>
               </div>
             </div>
