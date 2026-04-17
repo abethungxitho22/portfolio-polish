@@ -13,6 +13,17 @@ export default defineConfig(({ mode }) => ({
     },
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+  assetsInclude: [
+    "**/*.jpg",
+    "**/*.jpeg",
+    "**/*.png",
+    "**/*.svg",
+    "**/*.gif",
+    "**/*.webp",
+    "**/*.avif",
+    "**/*.JPG",
+    "**/*.JPEG",
+  ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

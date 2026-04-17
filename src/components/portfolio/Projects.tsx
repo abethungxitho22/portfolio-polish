@@ -22,27 +22,7 @@ const projects: Project[] = [
     demoLabel: 'Try live demo',
     featured: true,
   },
-  {
-    title: 'API Integrations Dashboard',
-    description:
-      'Internal tool built during my Plum Systems internship to monitor and resolve API related issues across services. Streamlined developer workflows with a clean React UI.',
-    tags: ['React', 'Node.js', 'REST APIs', 'GitLab'],
-    accent: 'blue',
-  },
-  {
-    title: 'Student Records System',
-    description:
-      'Java-based desktop application for managing student academic records, with full CRUD, role-based access, and reporting backed by a Derby database.',
-    tags: ['Java', 'Derby DB', 'JavaFX'],
-    accent: 'pink',
-  },
-  {
-    title: 'Personal Portfolio Website',
-    description:
-      'A responsive, modern portfolio (this site!) built with React, TypeScript and Tailwind CSS. Designed mobile-first with a soft, editorial aesthetic.',
-    tags: ['React', 'TypeScript', 'Tailwind'],
-    accent: 'blue',
-  },
+  
 ];
 
 export default function Projects() {
@@ -57,9 +37,6 @@ export default function Projects() {
           A few things I've{' '}
           <span className="text-secondary-deep italic">built</span>
         </h2>
-        <p className="text-muted-foreground max-w-2xl mb-12">
-          A selection of recent work — from internship deliverables to personal explorations.
-        </p>
 
         <div className="grid md:grid-cols-2 gap-6">
           {projects.map((p) => {

@@ -1,4 +1,5 @@
-import { ArrowDown, Github, Mail, Phone, User } from 'lucide-react';
+import { ArrowDown, Github, Mail, Phone } from 'lucide-react';
+import heroPhoto from '../../image/IMG_6961.JPG';
 
 export default function Hero() {
   return (
@@ -18,10 +19,7 @@ export default function Hero() {
           <div className="grid md:grid-cols-[1.4fr_1fr] gap-8 md:gap-10 items-center">
             {/* left: text */}
             <div>
-              <nav className="flex items-center gap-6 text-[10px] sm:text-xs tracking-[0.2em] uppercase text-foreground/70 font-semibold mb-8">
-                <a href="#about" className="hover:text-foreground transition-colors">About</a>
-                <a href="#projects" className="hover:text-foreground transition-colors">Projects</a>
-                <a href="#contact" className="hover:text-foreground transition-colors">Contact</a>
+              <nav className="flex items-center gap-6 text-[10px] sm:text-xs tracking-[0.2em] uppercase text-foreground/70 font-semibold mb-8"> 
               </nav>
 
               <h1 className="font-display font-bold text-foreground leading-[0.95] text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-3">
@@ -38,23 +36,19 @@ export default function Hero() {
                 href="#projects"
                 className="inline-flex items-center gap-2 px-5 py-2 rounded-full border-[1.5px] border-foreground/40 text-foreground text-xs font-semibold uppercase tracking-wider hover:bg-foreground hover:text-primary transition-all"
               >
-                See my work
+
               </a>
             </div>
 
             {/* right: photo card placeholder */}
             <div className="relative">
               <div className="relative aspect-[3/4] rounded-3xl overflow-hidden bg-gradient-to-br from-primary-soft via-primary-softer to-secondary-soft border border-background/40 shadow-lg">
-                {/* soft inner gradient */}
+                <img
+                  src={heroPhoto}
+                  alt="Abethu Ngxitho portrait"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 via-transparent to-secondary/30" />
-                {/* monogram placeholder — replace src with real image when ready */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-foreground/70">
-                  <div className="w-20 h-20 rounded-full bg-background/60 backdrop-blur flex items-center justify-center mb-3 shadow-soft">
-                    <User size={32} className="text-primary-deep" strokeWidth={1.5} />
-                  </div>
-                  <p className="font-display text-3xl font-bold">AN</p>
-                  <p className="text-[10px] uppercase tracking-[0.2em] mt-1 text-foreground/50">photo coming soon</p>
-                </div>
               </div>
 
               {/* status pill */}
