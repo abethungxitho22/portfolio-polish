@@ -140,29 +140,17 @@ export default function Projects() {
                   ))}
                 </div>
 
-                {p.featured && p.link && (
+                {p.featured && (
                   <div className="flex flex-wrap gap-3">
-                    <a
-                      href={p.link}
-                      target="_blank"
-                      rel="noreferrer"
+                    <button
+                      type="button"
+                      onClick={() => window.dispatchEvent(new CustomEvent('open-portfolio-chat'))}
                       className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary-deep text-primary-foreground text-sm font-semibold shadow-rose hover:opacity-90 hover:-translate-y-0.5 transition-all"
                     >
                       <MessageCircle size={16} />
                       {p.demoLabel ?? 'Try live demo'}
                       <ArrowUpRight size={14} />
-                    </a>
-                    {p.repo && (
-                      <a
-                        href={p.repo}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border text-foreground text-sm font-semibold hover:border-primary-deep transition-all"
-                      >
-                        <Github size={16} />
-                        View code
-                      </a>
-                    )}
+                    </button>
                   </div>
                 )}
               </article>
