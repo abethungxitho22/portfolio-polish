@@ -1,4 +1,4 @@
-import { ArrowDown, Github, Mail, Phone } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, Phone } from 'lucide-react';
 import heroPhoto from '../../image/IMG_6961.JPG';
 
 export default function Hero() {
@@ -70,6 +70,9 @@ export default function Hero() {
           </a>
           <a href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub" className="text-muted-foreground hover:text-primary-deep transition-colors">
             <Github size={18} />
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary-deep transition-colors">
+            <Linkedin size={18} />
           </a>
         </div>
       </div>
