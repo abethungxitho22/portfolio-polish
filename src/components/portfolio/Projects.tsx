@@ -1,10 +1,11 @@
-import { FolderGit2, ArrowUpRight, Github, MessageCircle } from 'lucide-react';
+import { FolderGit2, ArrowUpRight, Github, MessageCircle, PenLine, Smile } from 'lucide-react';
 
 type Project = {
   title: string;
   description: string;
   tags: string[];
   accent: 'pink' | 'blue';
+  icon?: 'chat' | 'pen' | 'smile';
   link?: string;
   repo?: string;
   demoLabel?: string;
@@ -15,14 +16,30 @@ const projects: Project[] = [
   {
     title: 'AI Chatbot',
     description:
-      'A conversational AI chatbot I built that handles natural language queries and delivers helpful, context-aware responses. Try the live demo to chat with it yourself.',
+      'A conversational AI chatbot I built that handles natural language queries and delivers helpful, context-aware responses. Try the live demo on this site — bottom-right corner.',
     tags: ['AI', 'Chatbot', 'Web'],
     accent: 'pink',
-    link: '#', // TODO: replace with your hosted chatbot URL
+    icon: 'chat',
+    link: '#',
     demoLabel: 'Try live demo',
     featured: true,
   },
-  
+  {
+    title: 'Content Generator',
+    description:
+      'An AI-powered tool that turns short prompts into polished written content — articles, captions, and marketing copy — in seconds.',
+    tags: ['AI', 'NLP', 'Web'],
+    accent: 'pink',
+    icon: 'pen',
+  },
+  {
+    title: 'Sentiment Analysis',
+    description:
+      'An NLP project that analyses text such as reviews, tweets, and feedback, and classifies the underlying sentiment as positive, negative, or neutral.',
+    tags: ['NLP', 'Python', 'ML'],
+    accent: 'blue',
+    icon: 'smile',
+  },
 ];
 
 export default function Projects() {
@@ -41,7 +58,11 @@ export default function Projects() {
         <div className="grid md:grid-cols-2 gap-6">
           {projects.map((p) => {
             const isPink = p.accent === 'pink';
-            const Icon = p.featured ? MessageCircle : FolderGit2;
+            const Icon =
+              p.icon === 'chat' ? MessageCircle :
+              p.icon === 'pen' ? PenLine :
+              p.icon === 'smile' ? Smile :
+              FolderGit2;
             return (
               <article
                 key={p.title}
@@ -119,29 +140,17 @@ export default function Projects() {
                   ))}
                 </div>
 
-                {p.featured && p.link && (
+                {p.featured && (
                   <div className="flex flex-wrap gap-3">
-                    <a
-                      href={p.link}
-                      target="_blank"
-                      rel="noreferrer"
+                    <button
+                      type="button"
+                      onClick={() => window.dispatchEvent(new CustomEvent('open-portfolio-chat'))}
                       className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary-deep text-primary-foreground text-sm font-semibold shadow-rose hover:opacity-90 hover:-translate-y-0.5 transition-all"
                     >
                       <MessageCircle size={16} />
                       {p.demoLabel ?? 'Try live demo'}
                       <ArrowUpRight size={14} />
-                    </a>
-                    {p.repo && (
-                      <a
-                        href={p.repo}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border text-foreground text-sm font-semibold hover:border-primary-deep transition-all"
-                      >
-                        <Github size={16} />
-                        View code
-                      </a>
-                    )}
+                    </button>
                   </div>
                 )}
               </article>
@@ -149,10 +158,6 @@ export default function Projects() {
           })}
         </div>
 
-        <p className="text-xs text-muted-foreground mt-6 text-center md:text-left">
-          Tip for Abethu: open <code className="px-1.5 py-0.5 rounded bg-background border border-border text-foreground/80">src/components/portfolio/Projects.tsx</code> and replace the chatbot{' '}
-          <code className="px-1.5 py-0.5 rounded bg-background border border-border text-foreground/80">link</code> with your real demo URL.
-        </p>
       </div>
     </section>
   );
